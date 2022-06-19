@@ -1,0 +1,64 @@
+package com.flightapp.entity;
+
+public class Airline {
+
+	private Long id;
+	private String airlineName;
+	private String logo;
+	private String phone;
+	private String address;
+
+	public Airline() {
+		super();
+	}
+
+	public Airline(Long id, String airlineName, String logo, String phone, String address) {
+		super();
+		this.id = id;
+		this.airlineName = airlineName;
+		this.logo = logo;
+		this.phone = phone;
+		this.address = address;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getAirlineName() {
+		return airlineName;
+	}
+
+	public void setAirlineName(String airlineName) {
+		this.airlineName = airlineName;
+	}
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+}

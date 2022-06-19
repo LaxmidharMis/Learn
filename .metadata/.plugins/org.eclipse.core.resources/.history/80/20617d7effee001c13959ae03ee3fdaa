@@ -1,0 +1,9 @@
+package com.flightapp.entity;
+
+public class Airline {
+	
+   private Long id;
+   private String airlineName;
+   private String logo;
+
+}

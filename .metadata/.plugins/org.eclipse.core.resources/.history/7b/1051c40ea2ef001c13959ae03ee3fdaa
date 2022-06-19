@@ -1,0 +1,73 @@
+package com.flightapp.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Airline extends AbstractEntity {
+
+	private String airlineName;
+	private String logo;
+	private String phone;
+	private String address;
+	private Boolean isActive;
+	@OneToMany
+	private List<Flight> flights=new ArrayList();
+
+	public Airline() {
+		super();
+	}
+
+	
+	public String getAirlineName() {
+		return airlineName;
+	}
+
+	public void setAirlineName(String airlineName) {
+		this.airlineName = airlineName;
+	}
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Flight getFlight() {
+		return flight;
+	}
+
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+
+}

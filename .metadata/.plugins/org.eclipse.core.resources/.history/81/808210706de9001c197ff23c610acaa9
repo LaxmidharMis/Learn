@@ -1,0 +1,17 @@
+package com.flightapp.entity;
+
+
+public class Admin {
+	
+	private Long id;
+	private String userName;
+	private String password;
+	
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+}

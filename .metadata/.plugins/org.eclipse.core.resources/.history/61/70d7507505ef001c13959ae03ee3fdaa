@@ -1,0 +1,16 @@
+package com.flightapp.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.flightapp.entity.Airline;
+
+@RestController
+public class AirlineController {
+	
+	@PostMapping("/addAitline")
+	public Airline addAirline() {
+		
+	}
+ 
+}

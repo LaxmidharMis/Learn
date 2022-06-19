@@ -1,0 +1,40 @@
+package com.flightapp.entity;
+
+import java.security.Timestamp;
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class Flight {
+
+	private Long id;
+	private String flightNumber;
+	@Column(length = 100)
+	private String airline;
+	private String departureCity;
+	private String arrivalCity;
+	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
+	private Meal meal;
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	private Date startDate;
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	private Date endDate;
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	private Date dateOfDeparture;
+	private Timestamp estimatedDepartureTime;
+	private Integer bussinessSeat;
+	private Integer nonBussinessSeat;
+	private Double price;
+	private Boolean isActive;
+
+	public Flight() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}	

@@ -1,0 +1,7 @@
+package com.flightapp.entity;
+
+public class Airline {
+	
+   private Long id;
+
+}

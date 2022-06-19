@@ -1,0 +1,10 @@
+package com.flightapp.entity;
+
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class AbstractEntity {
+	
+	private Long id;
+
+}

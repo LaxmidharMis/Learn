@@ -1,0 +1,7 @@
+package com.flightapp.entity;
+
+public class AbstractEntity {
+	
+	private Long id;
+
+}

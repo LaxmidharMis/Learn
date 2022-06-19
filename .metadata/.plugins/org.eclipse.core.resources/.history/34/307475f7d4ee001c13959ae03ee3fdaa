@@ -1,0 +1,23 @@
+package com.flightapp.entity;
+
+import java.security.Timestamp;
+import java.sql.Date;
+
+public class Flight {
+
+	private Long id;
+	private String flightNumber;
+	private String airline;
+	private String departureCity;
+	private String arrivalCity;
+	private Date startDate;
+	private Date endDate;
+	private Date dateOfDeparture;
+	private Timestamp estimatedDepartureTime;
+	private Double price;
+
+	public Flight() {
+		// TODO Auto-generated constructor stub
+	}
+
+}	

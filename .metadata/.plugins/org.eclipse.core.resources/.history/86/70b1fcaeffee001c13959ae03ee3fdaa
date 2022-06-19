@@ -1,0 +1,15 @@
+package com.flightapp.entity;
+
+public class Airline {
+
+	private Long id;
+	private String airlineName;
+	private String logo;
+	private String phone;
+	private String address;
+
+	public Airline() {
+		super();
+	}
+
+}

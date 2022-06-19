@@ -1,0 +1,15 @@
+package com.flightapp.service;
+
+import com.flightapp.entity.Admin;
+import com.flightapp.repository.AdminRepo;
+
+public class AdminServiceImpl implements AdminService {
+
+	private AdminRepo adminRepo;
+	
+	@Override
+	public Long saveAdmin(Admin admin) {
+		return null;
+	}
+
+}
