@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Airline extends AbstractEntity {
-
+    @Column(unique = true,length = 100)
 	private String airlineName;
 	private String logo;
 	private String phone;
@@ -80,6 +81,12 @@ public class Airline extends AbstractEntity {
 
 	public void setFlights(List<Flight> flights) {
 		this.flights = flights;
+	}
+
+	@Override
+	public String toString() {
+		return "Airline [airlineName=" + airlineName + ", logo=" + logo + ", phone=" + phone + ", address=" + address
+				+ ", isActive=" + isActive + ", flights=" + flights + "]";
 	}
 
 }

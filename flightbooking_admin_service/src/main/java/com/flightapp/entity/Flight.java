@@ -1,17 +1,14 @@
 package com.flightapp.entity;
 
-import java.security.Timestamp;
 import java.sql.Date;
-
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -24,13 +21,14 @@ public class Flight extends AbstractEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
 	private Meal meal;
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date startDate;
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date endDate;
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date dateOfDeparture;
-	private Timestamp estimatedDepartureTime;
+	@JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+	private LocalDateTime estimatedDepartureTime;
 	private Integer bussinessSeat;
 	private Integer nonBussinessSeat;
 	private Double price;
@@ -42,7 +40,7 @@ public class Flight extends AbstractEntity {
 	}
 
 	public Flight(String flightNumber, String airlineName, String departureCity, String arrivalCity, Meal meal,
-			Date startDate, Date endDate, Date dateOfDeparture, Timestamp estimatedDepartureTime, Integer bussinessSeat,
+			Date startDate, Date endDate, Date dateOfDeparture, LocalDateTime estimatedDepartureTime, Integer bussinessSeat,
 			Integer nonBussinessSeat, Double price, Airline airline) {
 		super();
 		this.flightNumber = flightNumber;
@@ -124,11 +122,11 @@ public class Flight extends AbstractEntity {
 		this.dateOfDeparture = dateOfDeparture;
 	}
 
-	public Timestamp getEstimatedDepartureTime() {
+	public LocalDateTime getEstimatedDepartureTime() {
 		return estimatedDepartureTime;
 	}
 
-	public void setEstimatedDepartureTime(Timestamp estimatedDepartureTime) {
+	public void setEstimatedDepartureTime(LocalDateTime estimatedDepartureTime) {
 		this.estimatedDepartureTime = estimatedDepartureTime;
 	}
 

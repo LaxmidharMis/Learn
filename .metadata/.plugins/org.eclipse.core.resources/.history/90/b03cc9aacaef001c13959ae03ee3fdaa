@@ -1,0 +1,14 @@
+package com.flightapp.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.flightapp.service.FlightServiceImpl;
+
+@RestController
+@RequestMapping("/admin")
+public class FlightController {
+	
+	private FlightServiceImpl flightService;
+
+}

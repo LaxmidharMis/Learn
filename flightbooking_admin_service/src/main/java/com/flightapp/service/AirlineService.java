@@ -4,6 +4,6 @@ import com.flightapp.entity.Airline;
 
 public interface AirlineService {
 	
-	public Airline addAirline();
+	public Long addAirline(Airline airline);
 
 }
