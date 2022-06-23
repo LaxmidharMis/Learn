@@ -1,7 +1,9 @@
 package com.flightapp.entity;
 
-import java.sql.Date;
+
 import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -162,4 +164,14 @@ public class Flight extends AbstractEntity {
 		this.airline = airline;
 	}
 
+	@Override
+	public String toString() {
+		return "Flight [flightNumber=" + flightNumber + ", airlineName=" + airlineName + ", departureCity="
+				+ departureCity + ", arrivalCity=" + arrivalCity + ", meal=" + meal + ", startDate=" + startDate
+				+ ", endDate=" + endDate + ", dateOfDeparture=" + dateOfDeparture + ", estimatedDepartureTime="
+				+ estimatedDepartureTime + ", bussinessSeat=" + bussinessSeat + ", nonBussinessSeat=" + nonBussinessSeat
+				+ ", price=" + price + ", airline=" + airline + "]";
+	}
+
+	
 }

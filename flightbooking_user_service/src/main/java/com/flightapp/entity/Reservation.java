@@ -1,19 +1,23 @@
 package com.flightapp.entity;
 
-public class Reservation {
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
-	private Long id;
+@Entity
+public class Reservation extends AbstractEntity{
+
 	private int noOfseat;
 	private String onwardSeat;
 	private String returnSeat;
 	private String meal;
+	@OneToOne
 	private Passenger passenger;
+	@OneToOne
 	private Flight flight;
 
-	public Reservation(Long id, int noOfseat, String onwardSeat, String returnSeat, String meal, Passenger passenger,
+	public Reservation(int noOfseat, String onwardSeat, String returnSeat, String meal, Passenger passenger,
 			Flight flight) {
 		super();
-		this.id = id;
 		this.noOfseat = noOfseat;
 		this.onwardSeat = onwardSeat;
 		this.returnSeat = returnSeat;
@@ -24,14 +28,6 @@ public class Reservation {
 
 	public Reservation() {
 		super();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public int getNoOfseat() {

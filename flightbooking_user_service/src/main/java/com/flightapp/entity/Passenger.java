@@ -1,8 +1,10 @@
 package com.flightapp.entity;
 
-public class Passenger {
+import javax.persistence.Entity;
 
-	private Long id;
+@Entity
+public class Passenger extends AbstractEntity {
+
 	private String name;
 	private String email;
 	private String gender;
@@ -13,22 +15,13 @@ public class Passenger {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Passenger(Long id, String name, String email, String gender, int age, String phone) {
+	public Passenger(String name, String email, String gender, int age, String phone) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.gender = gender;
 		this.age = age;
 		this.phone = phone;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getName() {

@@ -1,50 +1,63 @@
 package com.flightapp.entity;
 
-import java.security.Timestamp;
-import java.sql.Date;
 
-public class Flight {
+import java.time.LocalDateTime;
+import java.util.Date;
 
-	private Long id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class Flight extends AbstractEntity {
+
 	private String flightNumber;
-	private String airline;
+	private String airlineName;
 	private String departureCity;
-	private String drrivalCity;
+	private String arrivalCity;
+	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
+	private Meal meal;
+	@JsonFormat(pattern = "dd-MM-yyyy")
+	private Date startDate;
+	@JsonFormat(pattern = "dd-MM-yyyy")
+	private Date endDate;
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date dateOfDeparture;
-	private Timestamp estimatedDepartureTime;
+	@JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+	private LocalDateTime estimatedDepartureTime;
+	private Integer bussinessSeat;
+	private Integer nonBussinessSeat;
 	private Double price;
+	@ManyToOne
+	@JsonIgnore
+	private Airline airline;
 
 	public Flight() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public Flight(Long id, String flightNumber, String airline, String departureCity, String drrivalCity,
-			Date dateOfDeparture, Timestamp estimatedDepartureTime, Double price) {
+	public Flight(String flightNumber, String airlineName, String departureCity, String arrivalCity, Meal meal,
+			Date startDate, Date endDate, Date dateOfDeparture, LocalDateTime estimatedDepartureTime, Integer bussinessSeat,
+			Integer nonBussinessSeat, Double price, Airline airline) {
 		super();
-		this.id = id;
 		this.flightNumber = flightNumber;
-		this.airline = airline;
+		this.airlineName = airlineName;
 		this.departureCity = departureCity;
-		this.drrivalCity = drrivalCity;
+		this.arrivalCity = arrivalCity;
+		this.meal = meal;
+		this.startDate = startDate;
+		this.endDate = endDate;
 		this.dateOfDeparture = dateOfDeparture;
 		this.estimatedDepartureTime = estimatedDepartureTime;
+		this.bussinessSeat = bussinessSeat;
+		this.nonBussinessSeat = nonBussinessSeat;
 		this.price = price;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+		this.airline = airline;
 	}
 
 	public String getFlightNumber() {
@@ -55,12 +68,12 @@ public class Flight {
 		this.flightNumber = flightNumber;
 	}
 
-	public String getAirline() {
-		return airline;
+	public String getAirlineName() {
+		return airlineName;
 	}
 
-	public void setAirline(String airline) {
-		this.airline = airline;
+	public void setAirlineName(String airlineName) {
+		this.airlineName = airlineName;
 	}
 
 	public String getDepartureCity() {
@@ -71,12 +84,36 @@ public class Flight {
 		this.departureCity = departureCity;
 	}
 
-	public String getDrrivalCity() {
-		return drrivalCity;
+	public String getArrivalCity() {
+		return arrivalCity;
 	}
 
-	public void setDrrivalCity(String drrivalCity) {
-		this.drrivalCity = drrivalCity;
+	public void setArrivalCity(String arrivalCity) {
+		this.arrivalCity = arrivalCity;
+	}
+
+	public Meal getMeal() {
+		return meal;
+	}
+
+	public void setMeal(Meal meal) {
+		this.meal = meal;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 	public Date getDateOfDeparture() {
@@ -87,12 +124,54 @@ public class Flight {
 		this.dateOfDeparture = dateOfDeparture;
 	}
 
-	public Timestamp getEstimatedDepartureTime() {
+	public LocalDateTime getEstimatedDepartureTime() {
 		return estimatedDepartureTime;
 	}
 
-	public void setEstimatedDepartureTime(Timestamp estimatedDepartureTime) {
+	public void setEstimatedDepartureTime(LocalDateTime estimatedDepartureTime) {
 		this.estimatedDepartureTime = estimatedDepartureTime;
 	}
 
+	public Integer getBussinessSeat() {
+		return bussinessSeat;
+	}
+
+	public void setBussinessSeat(Integer bussinessSeat) {
+		this.bussinessSeat = bussinessSeat;
+	}
+
+	public Integer getNonBussinessSeat() {
+		return nonBussinessSeat;
+	}
+
+	public void setNonBussinessSeat(Integer nonBussinessSeat) {
+		this.nonBussinessSeat = nonBussinessSeat;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Airline getAirline() {
+		return airline;
+	}
+
+	public void setAirline(Airline airline) {
+		this.airline = airline;
+	}
+
+	@Override
+	public String toString() {
+		return "Flight [flightNumber=" + flightNumber + ", airlineName=" + airlineName + ", departureCity="
+				+ departureCity + ", arrivalCity=" + arrivalCity + ", meal=" + meal + ", startDate=" + startDate
+				+ ", endDate=" + endDate + ", dateOfDeparture=" + dateOfDeparture + ", estimatedDepartureTime="
+				+ estimatedDepartureTime + ", bussinessSeat=" + bussinessSeat + ", nonBussinessSeat=" + nonBussinessSeat
+				+ ", price=" + price + ", airline=" + airline + "]";
+	}
+
+	
 }
