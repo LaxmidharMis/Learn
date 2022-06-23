@@ -1,6 +1,24 @@
 admin service port- 8085
+user service port-  8086
+eureka server port- 8761
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************************************
 ECLEMMA java code coverage - junit dependency STS
 
 Kill tomcat
