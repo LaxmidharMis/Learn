@@ -11,14 +11,14 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Airline extends AbstractEntity {
-    @Column(unique = true,length = 100)
+	@Column(unique = true, length = 100)
 	private String airlineName;
 	private String logo;
 	private String phone;
 	private String address;
 	private Boolean isActive;
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "airline")
-	private List<Flight> flights=new ArrayList();
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "airline")
+	private List<Flight> flights = new ArrayList();
 
 	public Airline() {
 		super();

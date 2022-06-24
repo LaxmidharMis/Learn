@@ -39,23 +39,31 @@ public class AirlineServiceImpl implements AirlineService {
 	public Long updateAirline(Long id, Airline airline) {
 		Airline exsitingAirline = airlineRepo.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Airline", "id", id));
-		Boolean status;
-		if (exsitingAirline.getIsActive() == true) {
-			status=false;
-			exsitingAirline.setPhone(airline.getPhone());
-			exsitingAirline.setAddress(airline.getAddress());
-			exsitingAirline.setIsActive(status);
-			airlineRepo.save(exsitingAirline);
-			return exsitingAirline.getId();
-		}
-		else if (exsitingAirline.getIsActive() == false) {
-			status=true;
-			exsitingAirline.setPhone(airline.getPhone());
-			exsitingAirline.setAddress(airline.getAddress());
-			exsitingAirline.setIsActive(status);
-			airlineRepo.save(exsitingAirline);
-			return exsitingAirline.getId();
-		}
+		airline.setId(exsitingAirline.getId());
+//		exsitingAirline.setAirlineName(airline.getAirlineName());
+//		exsitingAirline.setLogo(airline.getLogo());
+//		exsitingAirline.setPhone(airline.getPhone());
+//		exsitingAirline.setAddress(airline.getAddress());
+//		exsitingAirline.setIsActive(airline.getIsActive());
+		airlineRepo.save(airline);
+		return exsitingAirline.getId();
+	}
+
+	@Override
+	public Long enableAirline(Long id, Airline airline) {
+		Airline exsitingAirline = airlineRepo.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Airline", "id", id));
+		exsitingAirline.setIsActive(true);
+		airlineRepo.save(exsitingAirline);
+		return exsitingAirline.getId();
+	}
+
+	@Override
+	public Long disableAirline(Long id, Airline airline) {
+		Airline exsitingAirline = airlineRepo.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Airline", "id", id));
+		exsitingAirline.setIsActive(false);
+		airlineRepo.save(exsitingAirline);
 		return exsitingAirline.getId();
 	}
 }
