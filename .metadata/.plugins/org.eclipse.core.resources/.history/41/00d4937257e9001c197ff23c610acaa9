@@ -1,8 +1,0 @@
-package com.flightapp.entity;
-
-
-public class Admin {
-	
-	private Long id
-
-}

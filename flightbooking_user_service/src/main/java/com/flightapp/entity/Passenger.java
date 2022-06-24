@@ -6,20 +6,20 @@ import javax.persistence.Entity;
 public class Passenger extends AbstractEntity {
 
 	private String name;
-	private String email;
 	private String gender;
-	private int age;
+	private String meal;
+	private Integer age;
 	private String phone;
 
 	public Passenger() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Passenger(String name, String email, String gender, int age, String phone) {
+	public Passenger(String name, String email, String gender, String meal, Integer age, String phone) {
 		super();
 		this.name = name;
-		this.email = email;
 		this.gender = gender;
+		this.meal = meal;
 		this.age = age;
 		this.phone = phone;
 	}
@@ -32,14 +32,6 @@ public class Passenger extends AbstractEntity {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getGender() {
 		return gender;
 	}
@@ -48,11 +40,19 @@ public class Passenger extends AbstractEntity {
 		this.gender = gender;
 	}
 
-	public int getAge() {
+	public String getMeal() {
+		return meal;
+	}
+
+	public void setMeal(String meal) {
+		this.meal = meal;
+	}
+
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
@@ -63,5 +63,4 @@ public class Passenger extends AbstractEntity {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
 }

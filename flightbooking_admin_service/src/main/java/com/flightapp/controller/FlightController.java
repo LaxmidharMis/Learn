@@ -25,7 +25,7 @@ public class FlightController {
 	@PostMapping("/addFlight")
 	public String addFlight(@RequestBody Flight flight) {
 		flightService.addFlight(flight);
-		System.out.println(flight.getEstimatedDepartureTime());
+		//System.out.println(flight.getEstimatedDepartureTime());
 		return "Flight added successfully";
 	}
 

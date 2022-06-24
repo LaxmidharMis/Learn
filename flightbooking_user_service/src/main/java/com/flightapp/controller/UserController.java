@@ -1,7 +1,6 @@
 package com.flightapp.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,7 @@ import com.flightapp.entity.User;
 import com.flightapp.service.UserService;
 
 @RestController
-@RequestMapping("/flight/user")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired

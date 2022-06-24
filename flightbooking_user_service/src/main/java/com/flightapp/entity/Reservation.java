@@ -4,62 +4,41 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Reservation extends AbstractEntity{
+public class Reservation extends AbstractEntity {
 
-	private int noOfseat;
-	private String onwardSeat;
-	private String returnSeat;
-	private String meal;
+	private String email;
+	private Integer pnr;
 	@OneToOne
 	private Passenger passenger;
 	@OneToOne
 	private Flight flight;
 
-	public Reservation(int noOfseat, String onwardSeat, String returnSeat, String meal, Passenger passenger,
-			Flight flight) {
-		super();
-		this.noOfseat = noOfseat;
-		this.onwardSeat = onwardSeat;
-		this.returnSeat = returnSeat;
-		this.meal = meal;
-		this.passenger = passenger;
-		this.flight = flight;
-	}
-
 	public Reservation() {
 		super();
 	}
 
-	public int getNoOfseat() {
-		return noOfseat;
+	public Reservation(String name, String email, Integer pnr, Passenger passenger, Flight flight) {
+		super();
+		this.email = email;
+		this.pnr = pnr;
+		this.passenger = passenger;
+		this.flight = flight;
 	}
 
-	public void setNoOfseat(int noOfseat) {
-		this.noOfseat = noOfseat;
+	public String getEmail() {
+		return email;
 	}
 
-	public String getOnwardSeat() {
-		return onwardSeat;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public void setOnwardSeat(String onwardSeat) {
-		this.onwardSeat = onwardSeat;
+	public Integer getPnr() {
+		return pnr;
 	}
 
-	public String getReturnSeat() {
-		return returnSeat;
-	}
-
-	public void setReturnSeat(String returnSeat) {
-		this.returnSeat = returnSeat;
-	}
-
-	public String getMeal() {
-		return meal;
-	}
-
-	public void setMeal(String meal) {
-		this.meal = meal;
+	public void setPnr(Integer pnr) {
+		this.pnr = pnr;
 	}
 
 	public Passenger getPassenger() {
@@ -77,5 +56,4 @@ public class Reservation extends AbstractEntity{
 	public void setFlight(Flight flight) {
 		this.flight = flight;
 	}
-
 }
