@@ -50,7 +50,7 @@ public class AirlineServiceImpl implements AirlineService {
 	}
 
 	@Override
-	public Long enableAirline(Long id, Airline airline) {
+	public Long enableAirline(Long id) {
 		Airline exsitingAirline = airlineRepo.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Airline", "id", id));
 		exsitingAirline.setIsActive(true);
@@ -59,7 +59,7 @@ public class AirlineServiceImpl implements AirlineService {
 	}
 
 	@Override
-	public Long disableAirline(Long id, Airline airline) {
+	public Long disableAirline(Long id) {
 		Airline exsitingAirline = airlineRepo.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Airline", "id", id));
 		exsitingAirline.setIsActive(false);

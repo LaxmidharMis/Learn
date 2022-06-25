@@ -57,10 +57,10 @@ public class AirlineController {
 	}
 	
 	@PutMapping("/enableAirline/{id}")
-	public ResponseEntity<Airline> enableAirline(@PathVariable Long id,@RequestBody Airline airline){
+	public ResponseEntity<Airline> enableAirline(@PathVariable Long id){
 		ResponseEntity<Airline> responseEntity=new ResponseEntity<>(HttpStatus.OK);
 		try {
-			airlineSevice.enableAirline(id, airline);
+			airlineSevice.enableAirline(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			responseEntity=new ResponseEntity<Airline>(HttpStatus.NOT_FOUND);
@@ -69,10 +69,10 @@ public class AirlineController {
 	}
 	
 	@PutMapping("/disableAirline/{id}")
-	public ResponseEntity<Airline> disableAirline(@PathVariable Long id,@RequestBody Airline airline){
+	public ResponseEntity<Airline> disableAirline(@PathVariable Long id){
 		ResponseEntity<Airline> responseEntity=new ResponseEntity<>(HttpStatus.OK);
 		try {
-			airlineSevice.disableAirline(id, airline);
+			airlineSevice.disableAirline(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			responseEntity=new ResponseEntity<Airline>(HttpStatus.NOT_FOUND);

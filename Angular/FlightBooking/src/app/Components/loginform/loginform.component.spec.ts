@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminformComponent } from './adminform.component';
+import { LoginformComponent } from './loginform.component';
 
-describe('AdminformComponent', () => {
-  let component: AdminformComponent;
-  let fixture: ComponentFixture<AdminformComponent>;
+describe('LoginformComponent', () => {
+  let component: LoginformComponent;
+  let fixture: ComponentFixture<LoginformComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminformComponent ]
+      declarations: [ LoginformComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminformComponent);
+    fixture = TestBed.createComponent(LoginformComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

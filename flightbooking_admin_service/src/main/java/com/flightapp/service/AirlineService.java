@@ -10,9 +10,9 @@ public interface AirlineService {
 	
 	public Long updateAirline(Long id,Airline airline);
 	
-	public Long enableAirline(Long id,Airline airline);
+	public Long enableAirline(Long id);
 	
-	public Long disableAirline(Long id,Airline airline);
+	public Long disableAirline(Long id);
 	
 	public List<Airline> getAllAirline();
 	

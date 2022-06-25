@@ -1,14 +1,16 @@
 package com.flightapp.entity;
 
 
-import java.time.LocalDateTime;
-import java.util.Date;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,14 +25,9 @@ public class Flight extends AbstractEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
 	private Meal meal;
-	@JsonFormat(pattern = "dd-MM-yyyy")
-	private Date startDate;
-	@JsonFormat(pattern = "dd-MM-yyyy")
-	private Date endDate;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date dateOfDeparture;
-	@JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
-	private LocalDateTime estimatedDepartureTime;
 	private Integer bussinessSeat;
 	private Integer nonBussinessSeat;
 	private Double price;
@@ -42,18 +39,14 @@ public class Flight extends AbstractEntity {
 	}
 
 	public Flight(String flightNumber, String airlineName, String departureCity, String arrivalCity, Meal meal,
-			Date startDate, Date endDate, Date dateOfDeparture, LocalDateTime estimatedDepartureTime, Integer bussinessSeat,
-			Integer nonBussinessSeat, Double price, Airline airline) {
+			Date dateOfDeparture, Integer bussinessSeat, Integer nonBussinessSeat, Double price, Airline airline) {
 		super();
 		this.flightNumber = flightNumber;
 		this.airlineName = airlineName;
 		this.departureCity = departureCity;
 		this.arrivalCity = arrivalCity;
 		this.meal = meal;
-		this.startDate = startDate;
-		this.endDate = endDate;
 		this.dateOfDeparture = dateOfDeparture;
-		this.estimatedDepartureTime = estimatedDepartureTime;
 		this.bussinessSeat = bussinessSeat;
 		this.nonBussinessSeat = nonBussinessSeat;
 		this.price = price;
@@ -100,36 +93,12 @@ public class Flight extends AbstractEntity {
 		this.meal = meal;
 	}
 
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
 	public Date getDateOfDeparture() {
 		return dateOfDeparture;
 	}
 
 	public void setDateOfDeparture(Date dateOfDeparture) {
 		this.dateOfDeparture = dateOfDeparture;
-	}
-
-	public LocalDateTime getEstimatedDepartureTime() {
-		return estimatedDepartureTime;
-	}
-
-	public void setEstimatedDepartureTime(LocalDateTime estimatedDepartureTime) {
-		this.estimatedDepartureTime = estimatedDepartureTime;
 	}
 
 	public Integer getBussinessSeat() {
@@ -163,15 +132,4 @@ public class Flight extends AbstractEntity {
 	public void setAirline(Airline airline) {
 		this.airline = airline;
 	}
-
-	@Override
-	public String toString() {
-		return "Flight [flightNumber=" + flightNumber + ", airlineName=" + airlineName + ", departureCity="
-				+ departureCity + ", arrivalCity=" + arrivalCity + ", meal=" + meal + ", startDate=" + startDate
-				+ ", endDate=" + endDate + ", dateOfDeparture=" + dateOfDeparture + ", estimatedDepartureTime="
-				+ estimatedDepartureTime + ", bussinessSeat=" + bussinessSeat + ", nonBussinessSeat=" + nonBussinessSeat
-				+ ", price=" + price + ", airline=" + airline + "]";
-	}
-
-	
 }
