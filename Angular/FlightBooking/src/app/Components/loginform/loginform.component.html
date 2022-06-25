@@ -1,1 +1,30 @@
-<p>loginform works!</p>
+<div class="bootstarp-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img class="img-fluid" style="width: 120px;" src="/assets/login.png">
+                </div>
+                <h1 class="text-center"> Login Here</h1>
+                <br>
+                <!-- creating form -->
+                <form (ngSubmit)="onSubmit()">
+                    <mat-form-field class="full-width">
+                        <mat-label>Username</mat-label>
+                        <input required [(ngModel)]="credentials.userName" type="text" name="username" matInput />
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input required [(ngModel)]="credentials.password" type="password" name="password" matInput />
+                    </mat-form-field>
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">Submit</button>
+                        <button type="reset" style="margin-left: 10px;" mat-raised-button color="warn">Reset</button>                   
+                    </div>
+                </form>
+                <br>
+                <p class="mt">{{credentials | json}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,11 @@
 package com.flightapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.flightapp.entity.Admin;
 import com.flightapp.entity.AuthRequest;
+import com.flightapp.entity.JwtResponse;
 import com.flightapp.service.AdminService;
 import com.flightapp.service.CustomUserDetailsService;
 import com.flightapp.util.JwtUtil;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/admin")
 public class AdminController {
 	@Autowired
@@ -39,7 +43,7 @@ public class AdminController {
 	}
 
 	@PostMapping("/login")
-	public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
+	public ResponseEntity<?> generateToken(@RequestBody AuthRequest authRequest) throws Exception {
 		try {
 			authenticationManager.authenticate(
 					new UsernamePasswordAuthenticationToken(authRequest.getUserName(), authRequest.getPassword()));
@@ -47,6 +51,8 @@ public class AdminController {
 			throw new Exception("Invaid username or Password");
 		}
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getUserName());
-		return jwtUtil.generateToken(userDetails);
+		String token = jwtUtil.generateToken(userDetails);
+		// converting token to json
+		return ResponseEntity.ok(new JwtResponse(token));
 	}
 }
