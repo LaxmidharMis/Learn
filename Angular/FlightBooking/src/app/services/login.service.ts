@@ -1,20 +1,22 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-   Base_URL = "http://localhost:8085/admin";
+   Base_URL = "http://localhost:8085/auth";
    
   //calling server to generate token
 
 generateToken(credentials:any){
  //generate token
- return this.http.post(`${this.Base_URL}/login`,credentials)};
+ return this.http.post(`${this.Base_URL}/login`,credentials,httpOptions)};
 
   constructor( private http:HttpClient) { }
 
@@ -27,7 +29,7 @@ generateToken(credentials:any){
   // to check user is login or not
   isLoggedIn() {
     let token = localStorage.getItem("token");
-    if (token == undefined || token == null || token == '') {
+    if (token == undefined || token == null || token === '') {
       return false;
     } else {
       return true;
@@ -35,9 +37,8 @@ generateToken(credentials:any){
   }
 
   // for logout user
-  logoutUser() {
-    localStorage.removeItem("token");
-    return true;
+  logoutUser() {   
+    return localStorage.removeItem("token");
   }
 
   //for getting token

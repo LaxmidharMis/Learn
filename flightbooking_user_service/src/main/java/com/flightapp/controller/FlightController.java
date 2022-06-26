@@ -16,7 +16,7 @@ import com.flightapp.service.FlightServiceImpl;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class FlightController {
 	@Autowired
 	FlightServiceImpl flightService;

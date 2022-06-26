@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -17,8 +18,10 @@ export class LoginformComponent implements OnInit {
     if ((this.credentials.userName != '' && this.credentials.password != '') && (this.credentials.userName != null && this.credentials.password != null)) {
   
       // generate the token
-        this.loginservice.generateToken(this.credentials).subscribe(response=>{
-          console.log(response);         
+        this.loginservice.generateToken(this.credentials).subscribe((response:any)=>{
+          console.log(response.token);
+          this.loginservice.loginUser(response.token);
+          window.location.href="/dashboard"         
         },error=>{
           console.log(error);
           

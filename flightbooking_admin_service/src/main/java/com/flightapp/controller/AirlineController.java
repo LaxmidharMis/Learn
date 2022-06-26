@@ -15,15 +15,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.flightapp.entity.Admin;
 import com.flightapp.entity.Airline;
 import com.flightapp.service.AirlineServiceImpl;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/admin")
-@CrossOrigin
 public class AirlineController {
 	@Autowired
 	private AirlineServiceImpl airlineSevice;
+	
+	
+	@GetMapping("/test")
+	public Admin welcome() {
+		return new Admin(1L,"Sadik","123");
+	}
 
 	@PostMapping("/addAirline")
 	public String addAirline(@RequestBody Airline airline) {

@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.flightapp.entity.Flight;
 import com.flightapp.service.FlightServiceImpl;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/admin")
-@CrossOrigin
 public class FlightController {
 	@Autowired
 	private FlightServiceImpl flightService;

@@ -18,9 +18,9 @@ import com.flightapp.service.AdminService;
 import com.flightapp.service.CustomUserDetailsService;
 import com.flightapp.util.JwtUtil;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@CrossOrigin
-@RequestMapping("/admin")
+@RequestMapping("/auth")
 public class AdminController {
 	@Autowired
 	private AdminService adminService;
@@ -31,11 +31,6 @@ public class AdminController {
 	private CustomUserDetailsService userDetailsService;
 	@Autowired
 	private JwtUtil jwtUtil;
-
-	@GetMapping("/")
-	public String welcome() {
-		return "Welcome to Admin service";
-	}
 
 	@PostMapping("/register")
 	public Long createAdmin(@RequestBody Admin admin) {

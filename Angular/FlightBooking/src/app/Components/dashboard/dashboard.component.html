@@ -1,1 +1,4 @@
 <p>dashboard works!</p>
+
+<button class="btn bg-primary" (click)="getAdmin()"> Get details</button>
+<h1 *ngIf="admin">{{admin.userName}}</h1>
