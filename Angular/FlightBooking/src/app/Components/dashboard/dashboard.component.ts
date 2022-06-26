@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   getAdmin() {
     this.airlineService.getAdmin().subscribe(admin => {
       console.log(admin);
-      this.admin
+      this.admin=admin
 
     }, error => {
       console.log(error);

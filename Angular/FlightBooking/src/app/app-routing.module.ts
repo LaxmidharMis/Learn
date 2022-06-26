@@ -3,8 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
+import { SearchComponent } from './components/search/search.component';
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 import { AuthGuard } from './services/auth.guard';
+
+
 
 const routes: Routes = [
   {
@@ -27,7 +30,12 @@ const routes: Routes = [
     path:'userdashboard',
     component:UserdashboardComponent,
     pathMatch:'full'
-  }
+  },
+  {
+    path:'search',
+    component:SearchComponent,
+    pathMatch:'full'
+  },
 
 ];
 

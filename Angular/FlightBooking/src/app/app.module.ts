@@ -19,7 +19,9 @@ import { AuthGuard } from './services/auth.guard';
 //import { AuthInterceptor } from './services/auth.interceptor';
 import { HTTP_INTERCEPTORS, HttpEvent } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { SearchComponent } from './components/search/search.component';
 //import { authInterceptorProviders } from './services/auth.interceptor';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -31,6 +33,7 @@ import { AuthInterceptor } from './services/auth.interceptor';
     HomeComponent,
     DashboardComponent,
     UserdashboardComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
   ],
   providers: [[
     { provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true }
