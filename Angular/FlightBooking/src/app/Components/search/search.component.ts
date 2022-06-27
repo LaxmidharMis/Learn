@@ -31,7 +31,7 @@ export class SearchComponent implements OnInit {
              //window.location.href="/searchlist"             
         },error=>{
           console.log(error);
-          this.msg="Not Flights Found"   
+          this.msg="Not Flights Found"      
         });
     }
 

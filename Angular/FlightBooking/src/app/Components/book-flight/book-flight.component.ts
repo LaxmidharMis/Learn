@@ -17,7 +17,6 @@ export class BookFlightComponent implements OnInit {
   constructor(private userService: UserService, private router: ActivatedRoute) { }
 
   onSubmit() {
-
   }
 
   ngOnInit(): void {
