@@ -22,6 +22,10 @@ import { AuthInterceptor } from './services/auth.interceptor';
 import { SearchComponent } from './components/search/search.component';
 //import { authInterceptorProviders } from './services/auth.interceptor';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { SearchListComponent } from './components/search-list/search-list.component';
+import {MatTableModule} from '@angular/material/table';
+import { BookFlightComponent } from './components/book-flight/book-flight.component';
+
 
 
 
@@ -34,6 +38,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     DashboardComponent,
     UserdashboardComponent,
     SearchComponent,
+    SearchListComponent,
+    BookFlightComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +52,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatInputModule,
     HttpClientModule,
     MatDatepickerModule,
+    MatTableModule
   ],
   providers: [[
     { provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true }

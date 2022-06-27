@@ -23,7 +23,8 @@ public class FlightServiceImpl implements FlightService {
 	@Override
 	public List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity)
 			throws Exception {
-		Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dateOfDeparture);
+		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateOfDeparture);
+		System.out.println("Date is"+date);
 		 List<Flight> flights = flightRepo.findByDateOfDepartureAndDepartureCityAndArrivalCity(date, departureCity, arrivalCity);
 		 List<Flight> filterFlights=new ArrayList<>();
 		 for(Flight flight:flights) {

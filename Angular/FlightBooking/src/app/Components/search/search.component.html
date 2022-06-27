@@ -11,15 +11,15 @@
                 <form (ngSubmit)="onSubmit()">
                     <mat-form-field class="full-width">
                         <mat-label>From</mat-label>
-                        <input required type="text" name="from" matInput />
+                        <input required [(ngModel)]="search.from" type="text" name="from" matInput />
                     </mat-form-field>
                     <mat-form-field class="full-width">
-                        <mat-label>Password</mat-label>
-                        <input required type="text" name="to" matInput />
+                        <mat-label>To</mat-label>
+                        <input required [(ngModel)]="search.to" type="text" name="to" matInput />
                     </mat-form-field>
                     <mat-form-field class="full-width">
                         <mat-label>Date</mat-label>
-                        <input required type="date" name="date" matInput />
+                        <input required [(ngModel)]="search.date" type="date" name="date" matInput />
                     </mat-form-field>
                     <div class="container text-center">
                         <button type="submit" mat-raised-button color="primary">Submit</button>
@@ -29,5 +29,28 @@
                 <br>
             </div>
         </div>
+    </div>
+    <h1 style="text-align:center; color:red" *ngIf="msg">{{msg}}</h1>
+    <div *ngIf="flights" style="margin: 2%;">
+      <table class="table">
+        <tbody>
+            <tr>
+              <td>Airlines</td>
+              <td>Departure City</td>
+              <td>Arrival City</td>
+              <td>Price</td>
+              <td>Action</td>
+            </tr>
+        <tbody>
+          <tr *ngFor="let u of flights; index as i">
+            <td>{{u.airlineName}}</td>
+            <td>{{u.departureCity}}</td>
+            <td>{{u.arrivalCity}}</td>
+            <td>{{u.price | currency:"INR"}}</td>
+            <td>
+                <button routerLink="/book/{{u.id}}" mat-raised-button color="accent">Book</button>
+          </tr>
+        </tbody>
+      </table>
     </div>
 </div>

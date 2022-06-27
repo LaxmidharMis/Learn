@@ -24,8 +24,8 @@ public class Flight extends AbstractEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
 	private Meal meal;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateOfDeparture;
 	private Integer bussinessSeat;
 	private Integer nonBussinessSeat;
