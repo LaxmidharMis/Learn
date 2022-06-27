@@ -15,6 +15,11 @@ searchFlight(search){
   return this.http.get(BASE_URL+'/searchFlight/'+search.date+'/'+search.from+'/'+search.to)
 }
 
+getFlight(id){
+  return this.http.get(BASE_URL+'/flight/'+id)
+}
+
+
 // setFlightDetails(data){
 //   this.flights=data;
 // }

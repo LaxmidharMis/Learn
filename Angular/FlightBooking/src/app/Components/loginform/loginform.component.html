@@ -14,11 +14,11 @@
                 <form (ngSubmit)="onSubmit()">
                     <mat-form-field class="full-width">
                         <mat-label>Username</mat-label>
-                        <input required [(ngModel)]="credentials.userName" type="text" name="username" matInput />
+                        <input required [(ngModel)]="credentials.userName" placeholder="Enter Username" type="text" name="username" matInput />
                     </mat-form-field>
                     <mat-form-field class="full-width">
                         <mat-label>Password</mat-label>
-                        <input required [(ngModel)]="credentials.password" type="password" name="password" matInput />
+                        <input required [(ngModel)]="credentials.password" placeholder="Enter Password"  type="password" name="password" matInput />
                     </mat-form-field>
                     <div class="container text-center">
                         <button type="submit" mat-raised-button color="primary">Submit</button>

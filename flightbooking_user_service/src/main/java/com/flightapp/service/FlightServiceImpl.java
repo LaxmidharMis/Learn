@@ -24,16 +24,22 @@ public class FlightServiceImpl implements FlightService {
 	public List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity)
 			throws Exception {
 		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateOfDeparture);
-		System.out.println("Date is"+date);
-		 List<Flight> flights = flightRepo.findByDateOfDepartureAndDepartureCityAndArrivalCity(date, departureCity, arrivalCity);
-		 List<Flight> filterFlights=new ArrayList<>();
-		 for(Flight flight:flights) {
-			 Airline airline = airlineRepo.findByAirlineName(flight.getAirlineName());
-			 if(airline.getIsActive()==true) {
-				 filterFlights.add(flight);
-			 }
-		 }
-		 return filterFlights;
+		System.out.println("Date is" + date);
+		List<Flight> flights = flightRepo.findByDateOfDepartureAndDepartureCityAndArrivalCity(date, departureCity,
+				arrivalCity);
+		List<Flight> filterFlights = new ArrayList<>();
+		for (Flight flight : flights) {
+			Airline airline = airlineRepo.findByAirlineName(flight.getAirlineName());
+			if (airline.getIsActive() == true) {
+				filterFlights.add(flight);
+			}
+		}
+		return filterFlights;
+	}
+
+	@Override
+	public Flight getFlight(Long id) {
+		return flightRepo.findById(id).orElse(null);
 	}
 
 }

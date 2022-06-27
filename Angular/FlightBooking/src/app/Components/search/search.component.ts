@@ -26,7 +26,8 @@ export class SearchComponent implements OnInit {
          this.userService.searchFlight(this.search).subscribe(response=>{
           console.log(response);         
              this.flights=response as Flight[];
-             console.log(this.flights);     
+             console.log(this.flights);
+            // this.userService.setFlightDetails(this.flights);     
              //window.location.href="/searchlist"             
         },error=>{
           console.log(error);
@@ -36,7 +37,7 @@ export class SearchComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    //this.userService.setFlightDetails(this.flights);
+   // this.userService.setFlightDetails(this.flights);
   }
 
 }

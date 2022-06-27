@@ -25,6 +25,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { SearchListComponent } from './components/search-list/search-list.component';
 import {MatTableModule} from '@angular/material/table';
 import { BookFlightComponent } from './components/book-flight/book-flight.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -52,7 +53,8 @@ import { BookFlightComponent } from './components/book-flight/book-flight.compon
     MatInputModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule
   ],
   providers: [[
     { provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true }

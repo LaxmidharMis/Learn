@@ -30,7 +30,9 @@
             </div>
         </div>
     </div>
-    <h1 style="text-align:center; color:red" *ngIf="msg">{{msg}}</h1>
+    <div *ngIf="msg" class="alert alert-danger" role="alert">
+        {{msg}}
+      </div>
     <div *ngIf="flights" style="margin: 2%;">
       <table class="table">
         <tbody>
@@ -48,7 +50,7 @@
             <td>{{u.arrivalCity}}</td>
             <td>{{u.price | currency:"INR"}}</td>
             <td>
-                <button routerLink="/book/{{u.id}}" mat-raised-button color="accent">Book</button>
+               <button routerLink="/book/{{u.id}}" mat-raised-button color="accent">Book</button>
           </tr>
         </tbody>
       </table>

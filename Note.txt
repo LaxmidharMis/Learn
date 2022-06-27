@@ -13,6 +13,27 @@ eureka server port- 8761
 
 
 
+****************************************************************
+ reservation ={
+    flightId:'',
+    email:'',
+    passengerName:'',
+    passengerGender:'',
+    meal:'',
+    age:'',
+    passengerPhone:'',
+    nameOnTheCard:'',
+    cardNumber:'',
+    expiryDate:'',
+    cvv:''
+  }
+
+
+
+
+
+
+
 
 
 

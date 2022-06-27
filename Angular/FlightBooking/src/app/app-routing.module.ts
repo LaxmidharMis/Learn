@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookFlightComponent } from './components/book-flight/book-flight.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
@@ -40,6 +41,11 @@ const routes: Routes = [
   {
     path:'searchlist',
     component:SearchListComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'book/:id',
+    component:BookFlightComponent,
     pathMatch:'full'
   },
 

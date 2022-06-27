@@ -9,12 +9,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SearchListComponent implements OnInit {
 
-  flights:Flight[]=[];
+  flights:Flight[];
 
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
-    // this.flights=this.userService.getFlightDetails();
+    //  this.flights=this.userService.getFlightDetails();
     // console.log(this.flights);
   }
 
