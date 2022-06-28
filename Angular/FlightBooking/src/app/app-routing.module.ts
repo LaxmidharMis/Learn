@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddAirlineComponent } from './Components/add-airline/add-airline.component';
 import { BookFlightComponent } from './components/book-flight/book-flight.component';
 import { CancelTicketComponent } from './Components/cancel-ticket/cancel-ticket.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -32,6 +33,17 @@ const routes: Routes = [
     pathMatch:'full',
     canActivate:[AuthGuard]
   },
+
+  {
+    path:'addAirline',
+    component:AddAirlineComponent,
+    pathMatch:'full',
+    canActivate:[AuthGuard]
+  },
+
+
+  // user views
+
   {
     path:'userdashboard',
     component:UserdashboardComponent,

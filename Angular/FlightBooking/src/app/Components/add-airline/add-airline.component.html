@@ -5,7 +5,11 @@
                 <div class="container text-center">
                     <span style="color:blue;font-size: 20px;">Add Airline Details</span><br><br>
 
-                    <div *ngIf="msg" class="alert alert-danger" role="alert">
+                    <div *ngIf="err" class="alert alert-danger" role="alert">
+                        {{err}}
+                    </div>
+
+                    <div *ngIf="msg" class="alert alert-success" role="alert">
                         {{msg}}
                     </div>
 
