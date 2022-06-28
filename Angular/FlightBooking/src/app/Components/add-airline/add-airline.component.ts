@@ -16,6 +16,8 @@ export class AddAirlineComponent implements OnInit {
   constructor(private adminService:AdminService) { }
 
   onSubmit(){
+
+    if((this.airline.airlineName!=null && this.airline.address!=null && this.airline.phone!=null)&&(this.airline.airlineName!='' && this.airline.address!='' && this.airline.phone!='')){
      this.adminService.addAirline(this.airline).subscribe(response=>{
       console.log(response);
       this.msg="Airline Added Successfully"
@@ -23,7 +25,7 @@ export class AddAirlineComponent implements OnInit {
      console.log(error);
      this.err="Airline already added"
      })
-
+    }
   }
 
   ngOnInit(): void {

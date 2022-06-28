@@ -14,5 +14,8 @@ export class AdminService {
     return this.http.post(Base_URL+'/addAirline',airline)
   }
 
+  addFlight(flight){
+    return this.http.post(Base_URL+'/addFlight',flight)
+  }
   
 }

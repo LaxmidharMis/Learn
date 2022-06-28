@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.flightapp.entity.Flight;
+import com.flightapp.entity.Response;
 import com.flightapp.service.FlightServiceImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -25,10 +26,13 @@ public class FlightController {
 	private FlightServiceImpl flightService;
 
 	@PostMapping("/addFlight")
-	public String addFlight(@RequestBody Flight flight) {
-		flightService.addFlight(flight);
-		//System.out.println(flight.getEstimatedDepartureTime());
-		return "Flight added successfully";
+	public ResponseEntity<?> addFlight(@RequestBody Flight flight) {
+		try {
+			flightService.addFlight(flight);
+			return ResponseEntity.status(HttpStatus.OK).body(new Response("Flight added successfully"));
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("Flight Not added"));
+		}
 	}
 
 	@GetMapping("/flight/{id}")

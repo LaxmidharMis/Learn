@@ -31,6 +31,7 @@ import { CancelTicketComponent } from './Components/cancel-ticket/cancel-ticket.
 import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.component'
 import { ViewByEmailComponent } from './Components/view-by-email/view-by-email.component';
 import { AddAirlineComponent } from './Components/add-airline/add-airline.component';
+import { AddFlightComponent } from './components/add-flight/add-flight.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AddAirlineComponent } from './Components/add-airline/add-airline.compon
     ViewByPNRComponent,
     ViewByEmailComponent,
     AddAirlineComponent,
+    AddFlightComponent,
   ],
   imports: [
     BrowserModule,
