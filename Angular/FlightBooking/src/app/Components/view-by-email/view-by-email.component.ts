@@ -12,6 +12,7 @@ export class ViewByEmailComponent implements OnInit {
   reservations: Reservation[];
   
   email:''
+  msg:string;
 
   constructor(private userService:UserService) { }
 
@@ -22,7 +23,8 @@ export class ViewByEmailComponent implements OnInit {
           console.log(response);
           this.reservations=response as Reservation[];      
       },error=>{
-      console.log(error);     
+      console.log(error);
+           this.msg='No Tickets Found'
       })
     }
   }

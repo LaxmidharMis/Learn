@@ -3,6 +3,9 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="container text-center mtt">
+                  <div *ngIf="msg" class="alert alert-danger" role="alert">
+                    {{msg}}
+                  </div>
                     <form (ngSubmit)="onSubmit()">
                         <br>
                         <mat-form-field class="full-width">

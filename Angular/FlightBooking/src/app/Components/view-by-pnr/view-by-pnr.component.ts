@@ -12,6 +12,7 @@ export class ViewByPNRComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   reservation: Reservation;
+  msg:string
 
   pnr = {
     pnr: '',
@@ -23,7 +24,8 @@ export class ViewByPNRComponent implements OnInit {
           console.log(response);
           this.reservation=response as Reservation;      
       },error=>{
-      console.log(error);     
+      console.log(error);
+      this.msg='No Tickets Found'
       })
     }
   }
