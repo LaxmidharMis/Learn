@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
@@ -27,6 +27,8 @@ import {MatTableModule} from '@angular/material/table';
 import { BookFlightComponent } from './components/book-flight/book-flight.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook-page.component';
+import { CancelTicketComponent } from './Components/cancel-ticket/cancel-ticket.component';
+import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.component';
 
 
 
@@ -43,6 +45,8 @@ import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook
     SearchListComponent,
     BookFlightComponent,
     TicketbookPageComponent,
+    CancelTicketComponent,
+    ViewByPNRComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,9 @@ getLastTicket(){
   return this.http.get(BASE_URL+'/last')
 }
 
+findTicketByPnr(pnr){
+  return this.http.get(BASE_URL+'/ticket/'+pnr)
+}
 
 // setFlightDetails(data){
 //   this.flights=data;
