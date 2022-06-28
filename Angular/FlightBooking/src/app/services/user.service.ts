@@ -31,6 +31,10 @@ findTicketByPnr(pnr){
   return this.http.get(BASE_URL+'/ticket/'+pnr)
 }
 
+findTicketByEmail(email){
+  return this.http.get(BASE_URL+'/booking/history/'+email)
+}
+
 // setFlightDetails(data){
 //   this.flights=data;
 // }

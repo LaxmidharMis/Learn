@@ -28,10 +28,8 @@ import { BookFlightComponent } from './components/book-flight/book-flight.compon
 import {MatRadioModule} from '@angular/material/radio';
 import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook-page.component';
 import { CancelTicketComponent } from './Components/cancel-ticket/cancel-ticket.component';
-import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.component';
-
-
-
+import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.component'
+import { ViewByEmailComponent } from './Components/view-by-email/view-by-email.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +45,7 @@ import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.compone
     TicketbookPageComponent,
     CancelTicketComponent,
     ViewByPNRComponent,
+    ViewByEmailComponent,
   ],
   imports: [
     BrowserModule,

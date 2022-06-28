@@ -9,6 +9,7 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import { SearchComponent } from './components/search/search.component';
 import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook-page.component';
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
+import { ViewByEmailComponent } from './Components/view-by-email/view-by-email.component';
 import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.component';
 import { AuthGuard } from './services/auth.guard';
 
@@ -64,6 +65,11 @@ const routes: Routes = [
   {
     path:'pnrticket',
     component:ViewByPNRComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'viewTicket',
+    component:ViewByEmailComponent,
     pathMatch:'full'
   },
 ];
