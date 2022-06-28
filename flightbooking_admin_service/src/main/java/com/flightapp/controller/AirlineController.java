@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.flightapp.entity.Admin;
 import com.flightapp.entity.Airline;
+import com.flightapp.entity.Response;
 import com.flightapp.service.AirlineServiceImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -33,14 +34,14 @@ public class AirlineController {
 	}
 
 	@PostMapping("/addAirline")
-	public String addAirline(@RequestBody Airline airline) {
+	public ResponseEntity<?> addAirline(@RequestBody Airline airline) {
 		try {
 			airlineSevice.addAirline(airline);
-			return "Airline added successfully";
+			return ResponseEntity.status(HttpStatus.OK).body(new Response("Airline added successfully"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "Airline already added";
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("Airline already added"));
 	}
 	
 	@GetMapping("/allAirline")

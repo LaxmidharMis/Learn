@@ -16,6 +16,8 @@ public class AirlineServiceImpl implements AirlineService {
 
 	@Override
 	public Long addAirline(Airline airline) {
+		airline.setIsActive(true);
+		airline.setLogo(airline.getAirlineName()+".png");
 		Airline savedAirline = airlineRepo.save(airline);
 		return savedAirline.getId();
 	}

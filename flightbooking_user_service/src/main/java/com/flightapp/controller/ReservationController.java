@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.flightapp.dto.ReservationRequest;
 import com.flightapp.entity.Reservation;
+import com.flightapp.entity.Response;
 import com.flightapp.service.ReservationServiceImpl;
 
 @RestController
