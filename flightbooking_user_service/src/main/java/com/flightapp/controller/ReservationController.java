@@ -27,14 +27,14 @@ public class ReservationController {
 	ReservationServiceImpl reservationService;
 
 	@PostMapping("/bookflight/{id}")
-	public String bookFlight(@RequestBody ReservationRequest request,@PathVariable Long id) {
+	public ResponseEntity<?> bookFlight(@RequestBody ReservationRequest request,@PathVariable Long id) {
 		try {
             reservationService.bookFlight(request, id);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "Flight not booked";
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Flight Not Booked");
 		}
-		return "Flight booked Successfully";
+		return ResponseEntity.status(HttpStatus.OK).body(new Response("Flight booked Successfully"));
 	}
 	
 	@GetMapping("/booking/history/{email}")
@@ -65,6 +65,11 @@ public class ReservationController {
 			responseEntity = new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		return responseEntity;
+	}
+	
+	@GetMapping("/last")
+	public Reservation lastTicketDeatils() {
+		return this.reservationService.lastTicketDeatils();
 	}
 
 }

@@ -14,5 +14,7 @@ public interface ReservationService {
 	public Reservation findTicket(Integer pnr);
 	
 	public void deteleTicket(Integer pnr);
+	
+	public Reservation lastTicketDeatils();
 
 }

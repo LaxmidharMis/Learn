@@ -60,4 +60,11 @@ public class ReservationServiceImpl implements ReservationService {
 		reservationRepo.deleteById(reservation.getId());
 	}
 
+	@Override
+	public Reservation lastTicketDeatils() {
+		List<Reservation> tickets = reservationRepo.findAll();
+		Reservation reservation = tickets.get(tickets.size()-1);
+		return reservation;
+	}
+
 }

@@ -17,6 +17,16 @@ export class BookFlightComponent implements OnInit {
   constructor(private userService: UserService, private router: ActivatedRoute) { }
 
   onSubmit() {
+
+    if((this.reservation.age!=null && this.reservation.email!=null&& this.reservation.passengerGender!=null&&this.reservation.passengerName!=null&&this.reservation.passengerPhone!=null)&&(this.reservation.email!=''&& this.reservation.passengerGender!=''&&this.reservation.passengerName!=''&&this.reservation.passengerPhone!='')){
+      this.userService.bookFlight(this.reservation,this.flight.id).subscribe((response:any)=>{
+        console.log(response);
+      },function (error) {
+        console.log(error);
+        alert("Something went wrong")
+      })
+    }
+
   }
 
   ngOnInit(): void {
