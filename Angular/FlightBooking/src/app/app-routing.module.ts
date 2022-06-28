@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddAirlineComponent } from './Components/add-airline/add-airline.component';
 import { AddFlightComponent } from './components/add-flight/add-flight.component';
+import { AirlineListComponent } from './components/airline-list/airline-list.component';
 import { BookFlightComponent } from './components/book-flight/book-flight.component';
-import { CancelTicketComponent } from './Components/cancel-ticket/cancel-ticket.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FlightListComponent } from './components/flight-list/flight-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
 import { SearchListComponent } from './components/search-list/search-list.component';
@@ -47,6 +48,18 @@ const routes: Routes = [
     pathMatch:'full',
     canActivate:[AuthGuard]
   },
+  {
+    path:'flightList',
+    component:FlightListComponent,
+    pathMatch:'full',
+    canActivate:[AuthGuard]
+  },
+  {
+    path:'airlineList',
+    component:AirlineListComponent,
+    pathMatch:'full',
+    canActivate:[AuthGuard]
+  },
 
 
   // user views
@@ -74,11 +87,6 @@ const routes: Routes = [
   {
     path:'lastticket',
     component:TicketbookPageComponent,
-    pathMatch:'full'
-  },
-  {
-    path:'cancel',
-    component:CancelTicketComponent,
     pathMatch:'full'
   },
   {

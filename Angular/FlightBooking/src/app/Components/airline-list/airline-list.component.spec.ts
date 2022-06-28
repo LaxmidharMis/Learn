@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CancelTicketComponent } from './cancel-ticket.component';
+import { AirlineListComponent } from './airline-list.component';
 
-describe('CancelTicketComponent', () => {
-  let component: CancelTicketComponent;
-  let fixture: ComponentFixture<CancelTicketComponent>;
+describe('AirlineListComponent', () => {
+  let component: AirlineListComponent;
+  let fixture: ComponentFixture<AirlineListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CancelTicketComponent ]
+      declarations: [ AirlineListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CancelTicketComponent);
+    fixture = TestBed.createComponent(AirlineListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

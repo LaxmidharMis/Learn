@@ -27,11 +27,12 @@ import {MatTableModule} from '@angular/material/table';
 import { BookFlightComponent } from './components/book-flight/book-flight.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook-page.component';
-import { CancelTicketComponent } from './Components/cancel-ticket/cancel-ticket.component';
 import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.component'
 import { ViewByEmailComponent } from './Components/view-by-email/view-by-email.component';
 import { AddAirlineComponent } from './Components/add-airline/add-airline.component';
 import { AddFlightComponent } from './components/add-flight/add-flight.component';
+import { FlightListComponent } from './components/flight-list/flight-list.component';
+import { AirlineListComponent } from './components/airline-list/airline-list.component';
 
 @NgModule({
   declarations: [
@@ -45,11 +46,12 @@ import { AddFlightComponent } from './components/add-flight/add-flight.component
     SearchListComponent,
     BookFlightComponent,
     TicketbookPageComponent,
-    CancelTicketComponent,
     ViewByPNRComponent,
     ViewByEmailComponent,
     AddAirlineComponent,
     AddFlightComponent,
+    FlightListComponent,
+    AirlineListComponent,
   ],
   imports: [
     BrowserModule,
