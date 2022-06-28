@@ -3524,3 +3524,99 @@ Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 10:26:18.116
 !MESSAGE executing callback sts4.classpath.cJAviPuK SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:07.609
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cJAviPuK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:07.613
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.cJAviPuK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:07.614
+!MESSAGE subsribers = {sts4.classpath.dBTpwPqO=Send Classpath Notifications(432), sts4.classpath.UOmJnqRn=Send Classpath Notifications(437)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:07.614
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cJAviPuK => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:22.898
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:22.899
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@310df168[org.springframework.tooling.boot.ls:1.13.0.201911200938(id=632)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:22.899
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.143
+!MESSAGE Boot LS startup time from start to initialized: 3243ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.198
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TYqDATDbisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.200
+!MESSAGE subscribing to classpath changes: sts4.classpath.TYqDATDb isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.200
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.201
+!MESSAGE subsribers = {sts4.classpath.dBTpwPqO=Send Classpath Notifications(432), sts4.classpath.TYqDATDb=Send Classpath Notifications(1124), sts4.classpath.UOmJnqRn=Send Classpath Notifications(437)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.201
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.201
+!MESSAGE project flightbooking_user_service ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.202
+!MESSAGE project eureka-server ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.202
+!MESSAGE project flightbooking_admin_service ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.202
+!MESSAGE Preparing classpath changed notification flightbooking_user_service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.203
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.204
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TYqDATDb => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.204
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.214
+!MESSAGE classpath=137 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.225
+!MESSAGE buffering callback sts4.classpath.TYqDATDb flightbooking_user_service false 137
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.226
+!MESSAGE Preparing classpath changed notification eureka-server
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.227
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.237
+!MESSAGE classpath=129 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.244
+!MESSAGE buffering callback sts4.classpath.TYqDATDb eureka-server false 129
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.245
+!MESSAGE Preparing classpath changed notification flightbooking_admin_service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.246
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.252
+!MESSAGE classpath=144 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.258
+!MESSAGE buffering callback sts4.classpath.TYqDATDb flightbooking_admin_service false 144
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.258
+!MESSAGE executing callback sts4.classpath.TYqDATDb 3 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-28 11:20:26.330
+!MESSAGE executing callback sts4.classpath.TYqDATDb SUCCESS [done]

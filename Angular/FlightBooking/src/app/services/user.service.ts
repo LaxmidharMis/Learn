@@ -23,6 +23,10 @@ bookFlight(reservation:any,id){
   return this.http.post(BASE_URL+'/bookflight/'+id,reservation)
 }
 
+getLastTicket(){
+  return this.http.get(BASE_URL+'/last')
+}
+
 
 // setFlightDetails(data){
 //   this.flights=data;

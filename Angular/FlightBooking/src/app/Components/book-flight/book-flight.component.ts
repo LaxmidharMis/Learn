@@ -21,6 +21,7 @@ export class BookFlightComponent implements OnInit {
     if((this.reservation.age!=null && this.reservation.email!=null&& this.reservation.passengerGender!=null&&this.reservation.passengerName!=null&&this.reservation.passengerPhone!=null)&&(this.reservation.email!=''&& this.reservation.passengerGender!=''&&this.reservation.passengerName!=''&&this.reservation.passengerPhone!='')){
       this.userService.bookFlight(this.reservation,this.flight.id).subscribe((response:any)=>{
         console.log(response);
+        window.location.href = "/lastticket"
       },function (error) {
         console.log(error);
         alert("Something went wrong")

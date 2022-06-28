@@ -26,6 +26,7 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import {MatTableModule} from '@angular/material/table';
 import { BookFlightComponent } from './components/book-flight/book-flight.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook-page.component';
 
 
 
@@ -41,6 +42,7 @@ import {MatRadioModule} from '@angular/material/radio';
     SearchComponent,
     SearchListComponent,
     BookFlightComponent,
+    TicketbookPageComponent,
   ],
   imports: [
     BrowserModule,

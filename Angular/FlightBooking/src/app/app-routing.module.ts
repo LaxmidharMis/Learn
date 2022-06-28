@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
 import { SearchListComponent } from './components/search-list/search-list.component';
 import { SearchComponent } from './components/search/search.component';
+import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook-page.component';
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 import { AuthGuard } from './services/auth.guard';
 
@@ -46,6 +47,11 @@ const routes: Routes = [
   {
     path:'book/:id',
     component:BookFlightComponent,
+    pathMatch:'full'
+  },
+  {
+    path:'lastticket',
+    component:TicketbookPageComponent,
     pathMatch:'full'
   },
 
