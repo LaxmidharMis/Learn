@@ -15,6 +15,8 @@ public interface ReservationService {
 	
 	public void deteleTicket(Integer pnr);
 	
+	public void deteleTicketId(Long id);
+	
 	public Reservation lastTicketDeatils();
 
 }

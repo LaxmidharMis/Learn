@@ -56,10 +56,22 @@ public class ReservationController {
 	}
 	
 	@DeleteMapping("/booking/cancel/{pnr}")
-	public ResponseEntity<?> deleteUser(@PathVariable Integer pnr) {
+	public ResponseEntity<?> deleteTicket(@PathVariable Integer pnr) {
 		ResponseEntity<?> responseEntity = new ResponseEntity<>(HttpStatus.OK);
 		try {
 			reservationService.deteleTicket(pnr);
+		} catch (Exception e) {
+			e.printStackTrace();
+			responseEntity = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return responseEntity;
+	}
+	
+	@DeleteMapping("/cancel/{id}")
+	public ResponseEntity<?> deteleTicketId(@PathVariable Long id) {
+		ResponseEntity<?> responseEntity = new ResponseEntity<>(HttpStatus.OK);
+		try {
+			reservationService.deteleTicketId(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			responseEntity = new ResponseEntity<>(HttpStatus.NOT_FOUND);

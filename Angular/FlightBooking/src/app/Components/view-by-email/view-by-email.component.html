@@ -22,6 +22,9 @@
                     <br>
                     <div *ngIf="reservations">
                     <span style="color:blue">Ticket Details</span><br>
+                    <div *ngIf="cancel" class="alert alert-danger" role="alert">
+                      {{cancel}}
+                    </div>
                     <div style="margin: 2%;">
                         <table class="table">
                           <thead>
@@ -41,7 +44,7 @@
                               <td>{{u.flight.departureCity}}</td>
                               <td>{{u.flight.arrivalCity}}</td>
                               <td>{{u.flight.price | currency:"INR"}}</td>
-                              <td><button style="font-size: 13px;" mat-raised-button color="accent">Cancel</button></td>
+                              <td><button (click)="deleteRow(u,i)"style="font-size: 13px;" mat-raised-button color="accent">Cancel</button></td>
                             </tr>
                           </tbody>
                         </table>

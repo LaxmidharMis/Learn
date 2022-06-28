@@ -35,6 +35,10 @@ findTicketByEmail(email){
   return this.http.get(BASE_URL+'/booking/history/'+email)
 }
 
+deleteTicket(reservation:any){
+ return this.http.delete(BASE_URL+'/cancel/'+reservation.id)
+}
+
 // setFlightDetails(data){
 //   this.flights=data;
 // }

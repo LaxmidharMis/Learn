@@ -9,10 +9,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ViewByEmailComponent implements OnInit {
 
+  reservation:Reservation=new Reservation;
   reservations: Reservation[];
   
   email:''
   msg:string;
+  cancel:String
 
   constructor(private userService:UserService) { }
 
@@ -29,6 +31,15 @@ export class ViewByEmailComponent implements OnInit {
     }
   }
   
+  deleteRow(reservation, index) {
+    const observable = this.userService.deleteTicket(reservation);
+    observable.subscribe((response: any) => {
+      console.log(response);
+      this.reservations.splice(index, 1)
+      this.cancel='Ticket has been cancelled'
+    })
+  }
+
   ngOnInit(): void {
   }
 

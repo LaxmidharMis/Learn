@@ -67,4 +67,9 @@ public class ReservationServiceImpl implements ReservationService {
 		return reservation;
 	}
 
+	@Override
+	public void deteleTicketId(Long id) {
+        reservationRepo.deleteById(id);		
+	}
+
 }
