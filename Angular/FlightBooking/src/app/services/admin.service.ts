@@ -33,5 +33,21 @@ export class AdminService {
   disableAirline(airline,id){
     return this.http.put(Base_URL+'/disableAirline/'+id,airline)
   }
+
+  getAllFlight(){
+    return this.http.get(Base_URL+'/allFlights');
+  }
+
+  delteFlight(flight){
+    return this.http.delete(Base_URL+"/deleteFlight/"+flight.id);
+  }
   
+  updateFlight(flight){
+    return this.http.put(Base_URL+'/updateFlight/'+flight.id,flight);
+  }
+
+  getCurrentFlight(id){
+    return this.http.get(Base_URL+'/flight/'+id)
+  }
+
 }

@@ -3,12 +3,12 @@ import Airline from "./Airline";
 
 export default class Flight{
     id:number;
-    flightNumber:string="";
+    flightNumber:string
     airlineName:string;
-    departureCity:string="";
-    arrivalCity:string="";
-    meal:string="";
-    dateOfDeparture:any="";
+    departureCity:string;
+    arrivalCity:string;
+    meal:string;
+    dateOfDeparture:string;
     bussinessSeat:number;
     nonBussinessSeat:number;
     price:number;

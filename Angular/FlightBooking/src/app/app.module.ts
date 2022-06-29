@@ -33,6 +33,7 @@ import { AddAirlineComponent } from './Components/add-airline/add-airline.compon
 import { AddFlightComponent } from './components/add-flight/add-flight.component';
 import { FlightListComponent } from './components/flight-list/flight-list.component';
 import { AirlineListComponent } from './components/airline-list/airline-list.component';
+import { UpdateFlightComponent } from './Components/update-flight/update-flight.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AirlineListComponent } from './components/airline-list/airline-list.com
     AddFlightComponent,
     FlightListComponent,
     AirlineListComponent,
+    UpdateFlightComponent,
   ],
   imports: [
     BrowserModule,

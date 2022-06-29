@@ -1,6 +1,7 @@
 package com.flightapp.service;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class FlightServiceImpl implements FlightService {
 		Airline airline = airlineRepo.findByAirlineName(airlineName);
 		flight.setAirline(airline);
 		Flight savedFlight = flightRepo.save(flight);
- 		return savedFlight.getId();
+		return savedFlight.getId();
 	}
 
 	@Override
@@ -34,9 +35,22 @@ public class FlightServiceImpl implements FlightService {
 		return flightRepo.findById(id).orElse(null);
 	}
 
+//	@Override
+//	public List<Flight> getAllFlights() {
+//		return flightRepo.findAll();
+//	}
+
 	@Override
 	public List<Flight> getAllFlights() {
-		return flightRepo.findAll();
+		List<Flight> flights = flightRepo.findAll();
+		List<Flight> filterFlights = new ArrayList<>();
+		for (Flight flight : flights) {
+			Airline airline = airlineRepo.findByAirlineName(flight.getAirlineName());
+			if (airline.getIsActive() == true) {
+				filterFlights.add(flight);
+			}
+		}
+		return filterFlights;
 	}
 
 	@Override
@@ -46,16 +60,18 @@ public class FlightServiceImpl implements FlightService {
 
 	@Override
 	public Long updateFlight(Long id, Flight flight) {
-		Flight exsitingFlight = flightRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Flight", "id", id));
+		Flight exsitingFlight = flightRepo.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Flight", "id", id));
 		flight.setId(id);
 		flightRepo.save(flight);
 		return exsitingFlight.getId();
 	}
 
 	@Override
-	public List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity) throws Exception {	
-		Date date=new SimpleDateFormat("dd-MM-yyyy").parse(dateOfDeparture);
+	public List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity)
+			throws Exception {
+		Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dateOfDeparture);
 		return flightRepo.findByDateOfDepartureAndDepartureCityAndArrivalCity(date, departureCity, arrivalCity);
 	}
-	
+
 }

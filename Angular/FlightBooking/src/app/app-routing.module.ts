@@ -11,6 +11,7 @@ import { LoginformComponent } from './components/loginform/loginform.component';
 import { SearchListComponent } from './components/search-list/search-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { TicketbookPageComponent } from './components/ticketbook-page/ticketbook-page.component';
+import { UpdateFlightComponent } from './Components/update-flight/update-flight.component';
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 import { ViewByEmailComponent } from './Components/view-by-email/view-by-email.component';
 import { ViewByPNRComponent } from './Components/view-by-pnr/view-by-pnr.component';
@@ -60,7 +61,12 @@ const routes: Routes = [
     pathMatch:'full',
     canActivate:[AuthGuard]
   },
-
+  {
+    path:'updateFlight/:id',
+    component:UpdateFlightComponent,
+    pathMatch:'full',
+    canActivate:[AuthGuard]
+  },
 
   // user views
 

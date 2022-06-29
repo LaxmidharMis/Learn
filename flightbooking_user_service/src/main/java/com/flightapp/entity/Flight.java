@@ -25,7 +25,7 @@ public class Flight extends AbstractEntity {
 	@Column(length = 20)
 	private Meal meal;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@JsonFormat(pattern = "yyyy-MM-dd")
+	//@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateOfDeparture;
 	private Integer bussinessSeat;
 	private Integer nonBussinessSeat;

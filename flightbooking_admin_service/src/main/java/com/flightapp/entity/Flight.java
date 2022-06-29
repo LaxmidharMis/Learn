@@ -4,6 +4,7 @@ package com.flightapp.entity;
 
 import java.sql.Date;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -25,8 +26,8 @@ public class Flight extends AbstractEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
 	private Meal meal;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@JsonFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "YYYY-MM-dd")
+	//@JsonFormat(pattern = "yyyy-MM-DD")
 	private Date dateOfDeparture;
 	private Integer bussinessSeat;
 	private Integer nonBussinessSeat;
