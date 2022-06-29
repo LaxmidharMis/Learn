@@ -53,7 +53,7 @@ public class Flight extends AbstractEntity {
 		this.price = price;
 		this.airline = airline;
 	}
-
+	
 	public String getFlightNumber() {
 		return flightNumber;
 	}

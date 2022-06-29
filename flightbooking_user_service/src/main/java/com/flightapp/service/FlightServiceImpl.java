@@ -19,6 +19,12 @@ public class FlightServiceImpl implements FlightService {
 	private FlightRepo flightRepo;
 	@Autowired
 	private AirlineRepo airlineRepo;
+	
+	public FlightServiceImpl(FlightRepo flightRepo, AirlineRepo airlineRepo) {
+		super();
+		this.flightRepo = flightRepo;
+		this.airlineRepo = airlineRepo;
+	}
 
 	@Override
 	public List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity)

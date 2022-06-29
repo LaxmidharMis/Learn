@@ -20,14 +20,20 @@ public class FlightServiceImpl implements FlightService {
 	private FlightRepo flightRepo;
 	@Autowired
 	private AirlineRepo airlineRepo;
+	
+	public FlightServiceImpl(FlightRepo flightRepo, AirlineRepo airlineRepo) {
+		super();
+		this.flightRepo = flightRepo;
+		this.airlineRepo = airlineRepo;
+	}
 
 	@Override
-	public Long addFlight(Flight flight) {
+	public Flight addFlight(Flight flight) {
 		String airlineName = flight.getAirlineName();
 		Airline airline = airlineRepo.findByAirlineName(airlineName);
 		flight.setAirline(airline);
 		Flight savedFlight = flightRepo.save(flight);
-		return savedFlight.getId();
+		return savedFlight;
 	}
 
 	@Override

@@ -7,7 +7,7 @@ import com.flightapp.entity.Flight;
 
 public interface FlightService {
 	
-	public Long addFlight(Flight flight);
+	public Flight addFlight(Flight flight);
 	
 	public Flight getFlight(Long id);
 	

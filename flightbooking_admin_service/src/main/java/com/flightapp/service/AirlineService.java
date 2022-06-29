@@ -6,7 +6,7 @@ import com.flightapp.entity.Airline;
 
 public interface AirlineService {
 	
-	public Long addAirline(Airline airline);
+	public Airline addAirline(Airline airline);
 	
 //	public Long updateAirline(Long id,Airline airline);
 	

@@ -25,6 +25,12 @@ public class Admin {
 		this.userName = userName;
 		this.password = password;
 	}
+	
+	public Admin(String userName, String password) {
+		super();
+		this.userName = userName;
+		this.password = password;
+	}
 
 	public Long getId() {
 		return id;

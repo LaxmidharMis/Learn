@@ -1,6 +1,5 @@
 package com.flightapp.controller;
 
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +23,11 @@ import com.flightapp.service.FlightServiceImpl;
 public class FlightController {
 	@Autowired
 	private FlightServiceImpl flightService;
+
+	public FlightController(FlightServiceImpl flightService) {
+		super();
+		this.flightService = flightService;
+	}
 
 	@PostMapping("/addFlight")
 	public ResponseEntity<?> addFlight(@RequestBody Flight flight) {
@@ -56,19 +60,19 @@ public class FlightController {
 		}
 		return responseEntity;
 	}
-	
+
 	@PutMapping("/updateFlight/{id}")
-	public ResponseEntity<Flight> updateAirline(@PathVariable Long id,@RequestBody Flight flight){
-		ResponseEntity<Flight> responseEntity=new ResponseEntity<>(HttpStatus.OK);
+	public ResponseEntity<Flight> updateFlight(@PathVariable Long id, @RequestBody Flight flight) {
+		ResponseEntity<Flight> responseEntity = new ResponseEntity<>(HttpStatus.OK);
 		try {
 			flightService.updateFlight(id, flight);
 		} catch (Exception e) {
 			e.printStackTrace();
-			responseEntity=new ResponseEntity<Flight>(HttpStatus.NOT_FOUND);
+			responseEntity = new ResponseEntity<Flight>(HttpStatus.NOT_FOUND);
 		}
-		return responseEntity;	
+		return responseEntity;
 	}
-	
+
 //	@GetMapping("/searchFlight/{dateOfDeparture}/{departureCity}/{arrivalCity}")
 //	public ResponseEntity<?> searchFlight(@PathVariable String dateOfDeparture,@PathVariable String departureCity,@PathVariable String arrivalCity ) throws Exception{ 
 //		List<Flight> flights = flightService.searchFlight(dateOfDeparture, departureCity, arrivalCity);
@@ -77,5 +81,5 @@ public class FlightController {
 //		}
 //		return 	ResponseEntity.ok(flights);
 //	}
-	
+
 }

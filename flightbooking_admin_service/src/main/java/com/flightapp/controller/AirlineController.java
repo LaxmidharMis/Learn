@@ -26,11 +26,16 @@ public class AirlineController {
 	@Autowired
 	private AirlineServiceImpl airlineSevice;
 	
-	
-	@GetMapping("/test")
-	public Admin welcome() {
-		return new Admin(1L,"Sadik","123");
+
+public AirlineController(AirlineServiceImpl airlineSevice) {
+		super();
+		this.airlineSevice = airlineSevice;
 	}
+
+//	@GetMapping("/test")
+//	public Admin welcome() {
+//		return new Admin(1L,"Sadik","123");
+//	}
 
 	@PostMapping("/addAirline")
 	public ResponseEntity<?> addAirline(@RequestBody Airline airline) {

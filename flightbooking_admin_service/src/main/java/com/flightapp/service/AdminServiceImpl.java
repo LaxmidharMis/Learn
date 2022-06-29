@@ -10,7 +10,12 @@ import com.flightapp.repository.AdminRepo;
 public class AdminServiceImpl implements AdminService {
     @Autowired
 	private AdminRepo adminRepo;
-	
+    
+	public AdminServiceImpl(AdminRepo adminRepo) {
+		super();
+		this.adminRepo = adminRepo;
+	}
+
 	@Override
 	public Long saveAdmin(Admin admin) {
 		Admin saveAdmin = adminRepo.save(admin);

@@ -24,15 +24,25 @@ public class Airline extends AbstractEntity {
 		super();
 	}
 
-	public Airline(String airlineName, String logo, String phone, String address, Boolean isActive,
-			List<Flight> flights) {
-		super();
+//	public Airline(String airlineName, String logo, String phone, String address, Boolean isActive,
+//			List<Flight> flights) {
+//		super();
+//		this.airlineName = airlineName;
+//		this.logo = logo;
+//		this.phone = phone;
+//		this.address = address;
+//		this.isActive = isActive;
+//		this.flights = flights;
+//	}
+
+	public Airline(String airlineName, String logo, String phone, String address, Boolean isActive) {
+
 		this.airlineName = airlineName;
 		this.logo = logo;
 		this.phone = phone;
 		this.address = address;
 		this.isActive = isActive;
-		this.flights = flights;
+
 	}
 
 	public String getAirlineName() {

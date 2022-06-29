@@ -10,6 +10,6 @@ import com.flightapp.entity.Flight;
 
 public interface FlightRepo extends JpaRepository<Flight, Long> {
 	
-  public List<Flight> findByDateOfDepartureAndDepartureCityAndArrivalCity(Date date,String departureCity,String arrivalCity );
+ // public List<Flight> findByDateOfDepartureAndDepartureCityAndArrivalCity(Date date,String departureCity,String arrivalCity );
 
 }

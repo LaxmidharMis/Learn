@@ -20,6 +20,13 @@ public class ReservationServiceImpl implements ReservationService {
 	ReservationRepo reservationRepo;
 	@Autowired
 	PassengerRepo passengerRepo;
+	
+	public ReservationServiceImpl(FlightRepo flightRepo, ReservationRepo reservationRepo, PassengerRepo passengerRepo) {
+		super();
+		this.flightRepo = flightRepo;
+		this.reservationRepo = reservationRepo;
+		this.passengerRepo = passengerRepo;
+	}
 
 	@Override
 	public Reservation bookFlight(ReservationRequest request, Long id) {

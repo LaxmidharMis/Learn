@@ -13,13 +13,18 @@ import com.flightapp.repository.AirlineRepo;
 public class AirlineServiceImpl implements AirlineService {
 	@Autowired
 	private AirlineRepo airlineRepo;
+	
+	public AirlineServiceImpl(AirlineRepo airlineRepo) {
+		super();
+		this.airlineRepo = airlineRepo;
+	}
 
 	@Override
-	public Long addAirline(Airline airline) {
+	public Airline addAirline(Airline airline) {
 		airline.setIsActive(true);
 		airline.setLogo(airline.getAirlineName()+".png");
 		Airline savedAirline = airlineRepo.save(airline);
-		return savedAirline.getId();
+		return savedAirline;
 	}
 
 	@Override
