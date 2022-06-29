@@ -62,16 +62,18 @@ public class FlightServiceImpl implements FlightService {
 	public Long updateFlight(Long id, Flight flight) {
 		Flight exsitingFlight = flightRepo.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Flight", "id", id));
+		Airline airline = airlineRepo.findByAirlineName(flight.getAirlineName());
 		flight.setId(id);
+		flight.setAirline(airline);
 		flightRepo.save(flight);
 		return exsitingFlight.getId();
 	}
 
-	@Override
-	public List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity)
-			throws Exception {
-		Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dateOfDeparture);
-		return flightRepo.findByDateOfDepartureAndDepartureCityAndArrivalCity(date, departureCity, arrivalCity);
-	}
+//	@Override
+//	public List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity)
+//			throws Exception {
+//		Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dateOfDeparture);
+//		return flightRepo.findByDateOfDepartureAndDepartureCityAndArrivalCity(date, departureCity, arrivalCity);
+//	}
 
 }

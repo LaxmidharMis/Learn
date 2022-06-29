@@ -8,7 +8,7 @@ public interface AirlineService {
 	
 	public Long addAirline(Airline airline);
 	
-	public Long updateAirline(Long id,Airline airline);
+//	public Long updateAirline(Long id,Airline airline);
 	
 	public Long enableAirline(Long id);
 	
@@ -16,7 +16,7 @@ public interface AirlineService {
 	
 	public List<Airline> getAllAirline();
 	
-	public Airline getAirline(Long id);
+//	public Airline getAirline(Long id);
 	
 	public void deleteAirline(Long id);
 

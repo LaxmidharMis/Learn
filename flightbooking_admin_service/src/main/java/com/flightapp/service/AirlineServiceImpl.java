@@ -27,29 +27,29 @@ public class AirlineServiceImpl implements AirlineService {
 		return airlineRepo.findAll();
 	}
 
-	@Override
-	public Airline getAirline(Long id) {
-		return airlineRepo.findById(id).get();
-	}
+//	@Override
+//	public Airline getAirline(Long id) {
+//		return airlineRepo.findById(id).get();
+//	}
 
 	@Override
 	public void deleteAirline(Long id) {
 		airlineRepo.deleteById(id);
 	}
 
-	@Override
-	public Long updateAirline(Long id, Airline airline) {
-		Airline exsitingAirline = airlineRepo.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Airline", "id", id));
-		airline.setId(exsitingAirline.getId());
-//		exsitingAirline.setAirlineName(airline.getAirlineName());
-//		exsitingAirline.setLogo(airline.getLogo());
-//		exsitingAirline.setPhone(airline.getPhone());
-//		exsitingAirline.setAddress(airline.getAddress());
-//		exsitingAirline.setIsActive(airline.getIsActive());
-		airlineRepo.save(airline);
-		return exsitingAirline.getId();
-	}
+//	@Override
+//	public Long updateAirline(Long id, Airline airline) {
+//		Airline exsitingAirline = airlineRepo.findById(id)
+//				.orElseThrow(() -> new ResourceNotFoundException("Airline", "id", id));
+//		airline.setId(exsitingAirline.getId());
+////		exsitingAirline.setAirlineName(airline.getAirlineName());
+////		exsitingAirline.setLogo(airline.getLogo());
+////		exsitingAirline.setPhone(airline.getPhone());
+////		exsitingAirline.setAddress(airline.getAddress());
+////		exsitingAirline.setIsActive(airline.getIsActive());
+//		airlineRepo.save(airline);
+//		return exsitingAirline.getId();
+//	}
 
 	@Override
 	public Long enableAirline(Long id) {

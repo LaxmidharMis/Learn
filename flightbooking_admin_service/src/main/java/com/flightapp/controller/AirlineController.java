@@ -48,23 +48,23 @@ public class AirlineController {
 		return airlineSevice.getAllAirline();	
 	}
 	
-	@GetMapping("/airline/{id}")
-	public Airline getAirline(@PathVariable Long id) {
-		return airlineSevice.getAirline(id);		
-	}
-	
-	@PutMapping("/updateAirline/{id}")
-	public ResponseEntity<Airline> updateAirline(@PathVariable Long id,@RequestBody Airline airline){
-		ResponseEntity<Airline> responseEntity=new ResponseEntity<>(HttpStatus.OK);
-		try {
-			airlineSevice.updateAirline(id, airline);
-		} catch (Exception e) {
-			e.printStackTrace();
-			responseEntity=new ResponseEntity<Airline>(HttpStatus.NOT_FOUND);
-		}
-		return responseEntity;	
-	}
-	
+//	@GetMapping("/airline/{id}")
+//	public Airline getAirline(@PathVariable Long id) {
+//		return airlineSevice.getAirline(id);		
+//	}
+//	
+//	@PutMapping("/updateAirline/{id}")
+//	public ResponseEntity<Airline> updateAirline(@PathVariable Long id,@RequestBody Airline airline){
+//		ResponseEntity<Airline> responseEntity=new ResponseEntity<>(HttpStatus.OK);
+//		try {
+//			airlineSevice.updateAirline(id, airline);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			responseEntity=new ResponseEntity<Airline>(HttpStatus.NOT_FOUND);
+//		}
+//		return responseEntity;	
+//	}
+//	
 	@PutMapping("/enableAirline/{id}")
 	public ResponseEntity<Airline> enableAirline(@PathVariable Long id){
 		ResponseEntity<Airline> responseEntity=new ResponseEntity<>(HttpStatus.OK);

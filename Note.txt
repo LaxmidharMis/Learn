@@ -2,6 +2,9 @@ admin service port- 8085
 user service port-  8086
 eureka server port- 8761
 
+Database credentails
+username -admin
+password -admin123
 
 
 

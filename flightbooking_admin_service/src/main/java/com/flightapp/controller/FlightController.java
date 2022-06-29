@@ -69,13 +69,13 @@ public class FlightController {
 		return responseEntity;	
 	}
 	
-	@GetMapping("/searchFlight/{dateOfDeparture}/{departureCity}/{arrivalCity}")
-	public ResponseEntity<?> searchFlight(@PathVariable String dateOfDeparture,@PathVariable String departureCity,@PathVariable String arrivalCity ) throws Exception{ 
-		List<Flight> flights = flightService.searchFlight(dateOfDeparture, departureCity, arrivalCity);
-		if(flights.size()==0) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Flight not found");
-		}
-		return 	ResponseEntity.ok(flights);
-	}
+//	@GetMapping("/searchFlight/{dateOfDeparture}/{departureCity}/{arrivalCity}")
+//	public ResponseEntity<?> searchFlight(@PathVariable String dateOfDeparture,@PathVariable String departureCity,@PathVariable String arrivalCity ) throws Exception{ 
+//		List<Flight> flights = flightService.searchFlight(dateOfDeparture, departureCity, arrivalCity);
+//		if(flights.size()==0) {
+//			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Flight not found");
+//		}
+//		return 	ResponseEntity.ok(flights);
+//	}
 	
 }

@@ -17,6 +17,6 @@ public interface FlightService {
 	
 	public Long updateFlight(Long id,Flight flight);
 	
-	List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity) throws Exception;
+//	List<Flight> searchFlight(String dateOfDeparture, String departureCity, String arrivalCity) throws Exception;
 
 }
