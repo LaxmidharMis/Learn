@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import Flight from '../Entity/Flight';
 
-const BASE_URL="http://localhost:8086/user";
+const BASE_URL="http://ec2-65-0-30-232.ap-south-1.compute.amazonaws.com:8086/user";
+//const BASE_URL="http://localhost:8086/user";
 
 @Injectable({
   providedIn: 'root'

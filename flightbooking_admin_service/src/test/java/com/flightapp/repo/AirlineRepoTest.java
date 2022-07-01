@@ -17,7 +17,7 @@ public class AirlineRepoTest {
 	
 	@Test
 	void testFindByAirlineName() {
-		Airline airline=new Airline("Go First","gofirst.png","12345678","Sakinaka",true);
+		Airline airline=new Airline("Spicejet","gofirst.png","12345678","Sakinaka",true);
 		//airlineRepo.save(airline);
 		Airline resultAirline = airlineRepo.findByAirlineName(airline.getAirlineName());
 		assertThat(airline.getAirlineName()).isEqualTo(resultAirline.getAirlineName());

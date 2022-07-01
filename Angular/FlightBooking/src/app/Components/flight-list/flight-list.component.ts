@@ -15,12 +15,15 @@ export class FlightListComponent implements OnInit {
   flights:Flight[];
   enb:string;
   dis:string;
+  delete:string
 
   deleteRow(flight,index){
     const observable = this.adminService.delteFlight(flight);
     observable.subscribe((response: any) => {
       this.flights.splice(index, 1)
-    })
+    },error=>{
+      this.delete='Ticket is booked for this flight kindly cancel that ticket first';
+  })
   }
 
   ngOnInit(): void {

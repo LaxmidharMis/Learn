@@ -48,6 +48,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>Fbeureka</finalName>
 	</build>
-
 </project>

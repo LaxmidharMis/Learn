@@ -18,8 +18,8 @@ public class AdminRepoTest {
 	
 	@Test
 	void testFindByUserName() {
-		Admin admin=new Admin(60L,"admin1","admin1");
-		adminRepo.save(admin);
+		Admin admin=new Admin(24L,"admin1","admin1");
+		//adminRepo.save(admin);
 		Admin result = adminRepo.findByUserName("admin1");
 		assertThat(admin.getUserName()).isEqualTo(result.getUserName());
 	}

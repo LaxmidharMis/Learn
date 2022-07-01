@@ -59,10 +59,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-
-
-
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>
@@ -78,6 +75,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>Fbadmin</finalName>
 	</build>
 
 	<dependencyManagement>

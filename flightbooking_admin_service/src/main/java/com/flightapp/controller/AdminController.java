@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.flightapp.entity.Admin;
 import com.flightapp.entity.AuthRequest;
 import com.flightapp.entity.JwtResponse;
+import com.flightapp.entity.Response;
 import com.flightapp.service.AdminService;
 import com.flightapp.service.CustomUserDetailsService;
 import com.flightapp.util.JwtUtil;
@@ -31,6 +32,12 @@ public class AdminController {
 	private CustomUserDetailsService userDetailsService;
 	@Autowired
 	private JwtUtil jwtUtil;
+	
+	
+	@GetMapping("/")
+	public Response test() {
+		return new Response("Welcome to Admin Service");
+	}
 
 	@PostMapping("/register")
 	public Long createAdmin(@RequestBody Admin admin) {

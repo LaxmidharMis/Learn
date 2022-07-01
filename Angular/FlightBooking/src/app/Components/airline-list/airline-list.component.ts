@@ -13,6 +13,7 @@ export class AirlineListComponent implements OnInit {
   airlines:Airline[];
   enb:string;
   dis:string;
+  delete:string;
 
   constructor(private adminService:AdminService) { }
 
@@ -20,6 +21,8 @@ export class AirlineListComponent implements OnInit {
     const observable = this.adminService.deleteAirline(airline);
     observable.subscribe((response: any) => {
       this.airlines.splice(index, 1)
+    },error=>{
+        this.delete='Flight is bolongs to this Airline kindly delete that flight first';
     })
   }
 

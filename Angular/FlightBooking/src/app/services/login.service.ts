@@ -10,7 +10,7 @@ const httpOptions = {
 })
 export class LoginService {
 
-   Base_URL = "http://localhost:8085/auth";
+   Base_URL = "http://ec2-65-0-30-232.ap-south-1.compute.amazonaws.com:8085/auth";
    
   //calling server to generate token
 
